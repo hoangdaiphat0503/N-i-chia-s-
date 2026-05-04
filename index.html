@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Góc Nhìn Mới - Khám Phá & Học Hỏi</title>
+    <meta name="description" content="Nơi chia sẻ góc nhìn và kiến thức thực chiến ở nhiều lĩnh vực hoàn toàn miễn phí.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Animation -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="main-headline">Bất kỳ ai mà ta gặp được trong cuộc đời, ta sẽ học được từ họ một điều gì đó</h1>
+        </div>
+    </header>
+
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="container glass-panel">
+            <h2>Góc Nhìn Mới</h2>
+            <p>
+                Xin chào! Tôi tạo ra trang web này không phải vì tôi là một chuyên gia "biết tuốt", mà vì tôi tin rằng mỗi trải nghiệm chúng ta đi qua đều mang một bài học giá trị. Dù là vận hành xe cafe, lướt sóng Crypto, hay đơn giản là cách xỏ giày chạy bộ mỗi sáng... 
+            </p>
+            <p>
+                Tôi hy vọng những góc nhìn cá nhân của mình sẽ mang lại cho bạn một luồng gió mới, một ý tưởng nhỏ nào đó để áp dụng vào cuộc sống. Hãy cứ lấy đi những gì bạn cần, hoàn toàn miễn phí!
+            </p>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="grid">
+                
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-icon">🤖</div>
+                    <h3>Hệ Thống AI Tự Build</h3>
+                    <p>Cách tôi tự build hệ thống AI, từ bài viết bạn đang đọc, thiết kế website, đưa lên các nền tảng hoàn toàn do AI làm.</p>
+                    <button class="cta-btn" onclick="openModal('AI')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-icon">☕</div>
+                    <h3>Khởi Nghiệp Cafe Take Away</h3>
+                    <p>Cách vận hành, setup xe cafe, các chỉ số cốt lõi và cách tạo dựng tệp khách hàng thân thuộc.</p>
+                    <button class="cta-btn" onclick="openModal('Cafe')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3>Kiến Thức Crypto</h3>
+                    <p>Hơn 2 năm tìm hiểu thị trường, đúc kết những kinh nghiệm thực chiến và quản lý rủi ro.</p>
+                    <button class="cta-btn" onclick="openModal('Crypto')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Sale Căn Hộ Dịch Vụ</h3>
+                    <p>Chiến lược tìm kiếm khách hàng, đàm phán và chốt sale hiệu quả trong mảng căn hộ dịch vụ.</p>
+                    <button class="cta-btn" onclick="openModal('RealEstate')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Chạy Quảng Cáo Facebook</h3>
+                    <p>Tối ưu chi phí, lên chiến dịch và đọc chỉ số quảng cáo dành cho người mới bắt đầu.</p>
+                    <button class="cta-btn" onclick="openModal('Ads')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-icon">⌚</div>
+                    <h3>Kiến Thức Đồng Hồ</h3>
+                    <p>Cách phân biệt, lựa chọn và bảo quản những chiếc đồng hồ mang giá trị vượt thời gian.</p>
+                    <button class="cta-btn" onclick="openModal('Watches')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="card">
+                    <div class="card-icon">🏃</div>
+                    <h3>Chạy Bộ Đúng Cách</h3>
+                    <p>Kỹ thuật đáp chân, nhịp tim và cách xây dựng sức bền để tránh chấn thương khi chạy bộ.</p>
+                    <button class="cta-btn" onclick="openModal('Running')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>Sưu Tầm Hay</h3>
+                    <p>Những câu chuyện, trích dẫn truyền cảm hứng và động lực mà tôi tâm đắc nhất.</p>
+                    <button class="cta-btn" onclick="openModal('Quotes')">Nhận Tài Liệu Miễn Phí</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Góc Nhìn Mới. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal cho phần nhận tài liệu -->
+    <div id="downloadModal" class="modal">
+        <div class="modal-content glass-panel">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Nhận Tài Liệu</h2>
+            <p>Tài liệu này hiện đang được lưu trữ trên Google Drive. Bạn có thể nhấn vào nút bên dưới để tải về ngay lập tức!</p>
+            <a href="#" id="modalDownloadLink" class="cta-btn" target="_blank">Truy cập Link Drive</a>
+            <p class="modal-note">*Sau này bạn có thể thay đường link này thành link tài liệu thực tế của bạn.</p>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
