@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <div class="overlay"></div>
@@ -105,14 +105,16 @@
                 <p class="survey-desc">Hãy để lại thông tin để tôi có thể chia sẻ những nội dung phù hợp nhất với bạn.</p>
                 
                 <form class="survey-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã chia sẻ thông tin!');">
-                    <div class="form-group">
-                        <label for="name">Tên của bạn</label>
-                        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="facebook">Link Facebook</label>
-                        <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/..." required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Tên của bạn</label>
+                            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="facebook">Link Facebook</label>
+                            <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/..." required>
+                        </div>
                     </div>
 
                     <div class="form-group">
