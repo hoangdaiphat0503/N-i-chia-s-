@@ -120,12 +120,13 @@
                     <div class="form-group">
                         <label>Bạn đang quan tâm nhất đến chủ đề nào hiện tại?</label>
                         <div class="radio-group">
-                            <label class="radio-label"><input type="radio" name="topic" value="AI" required> AI</label>
-                            <label class="radio-label"><input type="radio" name="topic" value="Kinh doanh"> Kinh doanh</label>
-                            <label class="radio-label"><input type="radio" name="topic" value="Crypto"> Crypto</label>
-                            <label class="radio-label"><input type="radio" name="topic" value="Marketing"> Marketing</label>
-                            <label class="radio-label"><input type="radio" name="topic" value="Khác"> Khác</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="AI" required onclick="toggleOtherTopic(false)"> AI</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Kinh doanh" onclick="toggleOtherTopic(false)"> Kinh doanh</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Crypto" onclick="toggleOtherTopic(false)"> Crypto</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Marketing" onclick="toggleOtherTopic(false)"> Marketing</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Khác" onclick="toggleOtherTopic(true)"> Khác</label>
                         </div>
+                        <input type="text" id="other-topic-input" class="other-input" name="other-topic" placeholder="Vui lòng ghi rõ chủ đề bạn quan tâm..." style="display: none; margin-top: 15px; width: 100%;">
                     </div>
 
                     <div class="form-group">
