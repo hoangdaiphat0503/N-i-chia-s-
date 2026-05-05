@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tôi muốn chia sẻ cho bạn ít nhất một điều tôi biết</title>
-    <meta name="description"
-        content="Nơi chia sẻ góc nhìn và kiến thức thực chiến ở nhiều lĩnh vực hoàn toàn miễn phí.">
+    <meta name="description" content="Nơi chia sẻ góc nhìn và kiến thức thực chiến ở nhiều lĩnh vực hoàn toàn miễn phí.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="overlay"></div>
 
@@ -28,13 +23,10 @@
             <div class="hero-content">
                 <h1 class="headline">Bất kỳ ai mà ta gặp được trong cuộc đời, ta sẽ học được từ họ một điều gì đó.</h1>
                 <p class="description">
-                    Xin chào! Tôi tạo ra trang web này không phải vì tôi là một chuyên gia "biết tuốt", mà vì tôi tin
-                    rằng mỗi trải nghiệm chúng ta đi qua đều mang một bài học giá trị. Dù là vận hành xe cafe, lướt sóng
-                    Crypto, hay đơn giản là cách xỏ giày chạy bộ mỗi sáng...
+                    Xin chào! Tôi tạo ra trang web này không phải vì tôi là một chuyên gia "biết tuốt", mà vì tôi tin rằng mỗi trải nghiệm chúng ta đi qua đều mang một bài học giá trị. Dù là vận hành xe cafe, lướt sóng Crypto, hay đơn giản là cách xỏ giày chạy bộ mỗi sáng...
                 </p>
                 <p class="description">
-                    Tôi hy vọng những góc nhìn cá nhân của mình sẽ mang lại cho bạn một luồng gió mới. Hãy cứ lấy đi
-                    những gì bạn cần, hoàn toàn miễn phí!
+                    Tôi hy vọng những góc nhìn cá nhân của mình sẽ mang lại cho bạn một luồng gió mới. Hãy cứ lấy đi những gì bạn cần, hoàn toàn miễn phí!
                 </p>
                 <a href="#categories" class="btn-primary">KHÁM PHÁ NGAY</a>
             </div>
@@ -49,8 +41,7 @@
                 <div class="card">
                     <div class="icon">01</div>
                     <h3>HỆ THỐNG AI TỰ BUILD</h3>
-                    <p>Cách tôi tự build hệ thống AI, từ bài viết bạn đang đọc, thiết kế website, đưa lên các nền tảng
-                        hoàn toàn do AI làm.</p>
+                    <p>Cách tôi tự build hệ thống AI, từ bài viết bạn đang đọc, thiết kế website, đưa lên các nền tảng hoàn toàn do AI làm.</p>
                     <button class="btn-outline" onclick="openModal('AI')">NHẬN TÀI LIỆU</button>
                 </div>
                 <!-- Card 2 -->
@@ -106,6 +97,71 @@
         </div>
     </section>
 
+    <!-- Survey Section -->
+    <section class="survey-section" id="survey">
+        <div class="container">
+            <div class="survey-container">
+                <h2 class="survey-title">KẾT NỐI & CHIA SẺ</h2>
+                <p class="survey-desc">Hãy để lại thông tin để tôi có thể chia sẻ những nội dung phù hợp nhất với bạn.</p>
+                
+                <form class="survey-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã chia sẻ thông tin!');">
+                    <div class="form-group">
+                        <label for="name">Tên của bạn</label>
+                        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="facebook">Link Facebook</label>
+                        <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bạn đang quan tâm nhất đến chủ đề nào hiện tại?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="topic" value="AI" required> AI</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Kinh doanh"> Kinh doanh</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Crypto"> Crypto</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Marketing"> Marketing</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Khác"> Khác</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mục tiêu lớn nhất của bạn khi vào đây là gì?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="goal" value="Kiếm tiền" required> Kiếm tiền</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Học kỹ năng"> Học kỹ năng</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Xây hệ thống"> Xây hệ thống</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Tham khảo"> Tham khảo</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bạn muốn tôi chia sẻ theo kiểu nào?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="style" value="Hướng dẫn từng bước" required> Hướng dẫn từng bước</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Case thực tế"> Case thực tế</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Tool + tài nguyên"> Tool + tài nguyên</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Tư duy chiến lược"> Tư duy chiến lược</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hiện tại bạn đang gặp khó nhất ở đâu?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="struggle" value="Không biết bắt đầu" required> Không biết bắt đầu</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Làm rồi nhưng không ra tiền"> Làm rồi nhưng không ra tiền</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Thiếu hệ thống"> Thiếu hệ thống</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Không có khách"> Không có khách</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit">GỬI THÔNG TIN</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Modal -->
     <div id="downloadModal" class="modal">
         <div class="modal-content glass-panel">
@@ -119,5 +175,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
