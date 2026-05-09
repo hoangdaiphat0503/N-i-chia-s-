@@ -104,12 +104,63 @@
                 <h2 class="survey-title">KẾT NỐI & CHIA SẺ</h2>
                 <p class="survey-desc">Hãy để lại thông tin để tôi có thể chia sẻ những nội dung phù hợp nhất với bạn.</p>
                 
-                <div class="google-form-container" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
-                    <p style="color: #ffd700; font-style: italic; margin-bottom: 20px; text-align: center; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 8px;">
-                        *Hãy copy mã nhúng từ Google Form của bạn và dán đè lên thẻ &lt;iframe&gt; bên dưới*
-                    </p>
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe_THAY_BANG_LINK_CUA_BAN/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0" style="border-radius: 12px; background: white;">Đang tải…</iframe>
-                </div>
+                <form class="survey-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã chia sẻ thông tin! (Lưu ý: Để dữ liệu chạy về Google Sheets, bạn cần tự tạo Google Form/Formspree và cung cấp ID nhé)');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Tên của bạn</label>
+                            <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="facebook">Link Facebook</label>
+                            <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/..." required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bạn đang quan tâm nhất đến chủ đề nào hiện tại?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="topic" value="AI" required onclick="toggleOtherTopic(false)"> AI</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Kinh doanh" onclick="toggleOtherTopic(false)"> Kinh doanh</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Crypto" onclick="toggleOtherTopic(false)"> Crypto</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Marketing" onclick="toggleOtherTopic(false)"> Marketing</label>
+                            <label class="radio-label"><input type="radio" name="topic" value="Khác" onclick="toggleOtherTopic(true)"> Khác</label>
+                        </div>
+                        <input type="text" id="other-topic-input" class="other-input" name="other-topic" placeholder="Vui lòng ghi rõ chủ đề bạn quan tâm..." style="display: none; margin-top: 15px; width: 100%;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mục tiêu lớn nhất của bạn khi vào đây là gì?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="goal" value="Kiếm tiền" required> Kiếm tiền</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Học kỹ năng"> Học kỹ năng</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Xây hệ thống"> Xây hệ thống</label>
+                            <label class="radio-label"><input type="radio" name="goal" value="Tham khảo"> Tham khảo</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bạn muốn tôi chia sẻ theo kiểu nào?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="style" value="Hướng dẫn từng bước" required> Hướng dẫn từng bước</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Case thực tế"> Case thực tế</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Tool + tài nguyên"> Tool + tài nguyên</label>
+                            <label class="radio-label"><input type="radio" name="style" value="Tư duy chiến lược"> Tư duy chiến lược</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hiện tại bạn đang gặp khó nhất ở đâu?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="struggle" value="Không biết bắt đầu" required> Không biết bắt đầu</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Làm rồi nhưng không ra tiền"> Làm rồi nhưng không ra tiền</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Thiếu hệ thống"> Thiếu hệ thống</label>
+                            <label class="radio-label"><input type="radio" name="struggle" value="Không có khách"> Không có khách</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit">GỬI THÔNG TIN</button>
+                </form>
             </div>
         </div>
     </section>
