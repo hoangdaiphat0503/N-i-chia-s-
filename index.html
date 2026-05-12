@@ -237,7 +237,7 @@
         
         // Khởi tạo Supabase client
         const { createClient } = window.supabase;
-        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         console.log('✅ Supabase client initialized successfully');
 
         // Form submission handler với Supabase integration
@@ -272,7 +272,7 @@
                 
                 try {
                     // Gửi dữ liệu đến Supabase
-                    const { error } = await supabase
+                    const { error } = await supabaseClient
                         .from('Noi_chia_se')
                         .insert([data]);
                     
