@@ -262,19 +262,18 @@
                 // Lấy dữ liệu form
                 const formData = new FormData(surveyForm);
                 const data = {
-                    name: formData.get('name'),
-                    memory: formData.get('memory'),
-                    topic: formData.get('topic'),
-                    goal: formData.get('goal'),
-                    style: formData.get('style'),
-                    struggle: formData.get('struggle'),
-                    timestamp: new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })
+                    "Tên của bạn": formData.get('name'),
+                    "Chúng ta gặp nhau chưa? Kỷ niệm nào giữa chúng ta t": formData.get('memory'),
+                    "Bạn đang quan tâm nhất đến chủ đề nào hiện t": formData.get('topic'),
+                    "Mục tiêu lớn nhất của bạn khi vào đây là gì?": formData.get('goal'),
+                    "Bạn muốn tôi chia sẻ theo kiểu nào?": formData.get('style'),
+                    "Hiện tại bạn đang gặp khó nhất ở đâu?": formData.get('struggle')
                 };
                 
                 try {
                     // Gửi dữ liệu đến Supabase
                     const { error } = await supabase
-                        .from('form_submissions')
+                        .from('Noi_chia_se')
                         .insert([data]);
                     
                     if (error) {
