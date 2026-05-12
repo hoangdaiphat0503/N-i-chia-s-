@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Supabase Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="overlay"></div>
@@ -229,7 +231,16 @@
             }
         }
 
-        // Form submission handler với Google Sheets integration
+        // Supabase Configuration - User's Project
+        const SUPABASE_URL = 'https://zbqpkoisutwwzlnowlqa.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_wr3ASCxG9W1ZqSbKHgy0bA_2xdiAeAP';
+        
+        // Khởi tạo Supabase client
+        const { createClient } = window.supabase;
+        const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        console.log('✅ Supabase client initialized successfully');
+
+        // Form submission handler với Supabase integration
         const surveyForm = document.getElementById('surveyForm');
         const formStatus = document.getElementById('form-status');
 
@@ -261,13 +272,20 @@
                 };
                 
                 try {
-                    // Gửi dữ liệu đến Google Sheets qua Web App
-                    // Ban đầu lưu vào localStorage để demo
-                    saveToLocalStorage(data);
+                    // Gửi dữ liệu đến Supabase
+                    const { error } = await supabase
+                        .from('form_submissions')
+                        .insert([data]);
+                    
+                    if (error) {
+                        console.error('Supabase error:', error);
+                        throw error;
+                    }
                     
                     // Hiển thị thông báo thành công
                     formStatus.style.color = '#4CAF50';
                     formStatus.textContent = '✅ Gửi thành công! Cảm ơn bạn đã kết nối.';
+                    console.log('✅ Data saved to Supabase:', data);
                     
                     // Reset form sau 2 giây
                     setTimeout(() => {
@@ -277,8 +295,16 @@
                     
                 } catch (error) {
                     console.error('Error:', error);
-                    formStatus.style.color = '#ff4444';
-                    formStatus.textContent = '❌ Lỗi kết nối. Vui lòng thử lại sau.';
+                    // Fallback: lưu vào localStorage nếu Supabase lỗi
+                    saveToLocalStorage(data);
+                    
+                    formStatus.style.color = '#ff9800';
+                    formStatus.textContent = '⚠️ Lỗi kết nối Supabase. Đã lưu locally!';
+                    
+                    setTimeout(() => {
+                        surveyForm.reset();
+                        formStatus.style.display = 'none';
+                    }, 3000);
                 } finally {
                     // Enable submit button
                     submitBtn.disabled = false;
